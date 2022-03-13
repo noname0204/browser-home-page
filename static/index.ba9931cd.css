@@ -1,0 +1,137 @@
+@font-face {
+  font-family: 'SquareFont';
+  src: url('./Squares-Bold.fc66f696.otf');
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #bbc4c8;
+}
+
+#app-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: #263238;
+}
+._header_1dwaf_1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+  gap: 1rem;
+}
+._search-box_60d15_1 {
+  --gap: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap);
+  padding: 0 var(--gap);
+
+  background-color: #222d32;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0px 4px 5px #171d20;
+
+  width: 870px;
+  height: 70px;
+
+  user-select: none;
+}
+
+._engine-toggle_60d15_39 {
+  background: none;
+  border: none;
+
+  transition-duration: 0.6s;
+  opacity: 60%;
+}
+
+._engine-toggle_60d15_39:hover {
+  cursor: pointer;
+  filter: saturate(150%) brightness(120%);
+
+  opacity: 100%;
+  outline: none;
+  box-shadow: none;
+}
+
+._input-form_60d15_73 {
+  border: none;
+  outline: none;
+  background: none;
+
+  width: 100%;
+  height: 100%;
+
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: whitesmoke;
+  border-radius: 0px 0px 0px 0px;
+
+  font-size: 22px;
+  text-align: center;
+}
+
+._submit_60d15_105 {
+  width: 60px;
+  height: 70px;
+
+  background: none;
+  border: none;
+
+  padding-left: 11px;
+  padding-right: 12px;
+
+  opacity: 60%;
+  transition-duration: 0.5s;
+}
+
+._submit_60d15_105 > img {
+  transition: opacity 0.5s;
+}
+
+._submit_60d15_105._disable_60d15_141 > img {
+  cursor: not-allowed;
+  opacity: 50%;
+  filter: saturate(90%) brightness(80%);
+}
+
+._submit_60d15_105:not(._disable_60d15_141) > img:hover {
+  opacity: 100%;
+  cursor: pointer;
+  filter: saturate(150%) brightness(120%);
+}
+._clock_1e3qj_1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'SquareFont';
+  font-size: 6rem;
+}
+
+._clock_1e3qj_1 > *:not(:last-child)::after {
+  content: ':';
+  margin: 0 1rem;
+}
+._category_1w7km_1 {
+  margin-left: 1rem;
+}
+._bookmark_150s9_1 {
+  display: flex;
+  justify-content: space-evenly;
+}
