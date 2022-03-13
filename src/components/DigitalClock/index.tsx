@@ -22,11 +22,11 @@ const DigitalClock: React.FC = () => {
 
   useEffect(() => {
     interval.current = setInterval(() => {
-      const date = new Date();
+      date.current = new Date();
       const [currentHours, currentMinutes, currentSeconds] = [
-        date.getHours(),
-        date.getMinutes(),
-        date.getSeconds(),
+        date.current.getHours(),
+        date.current.getMinutes(),
+        date.current.getSeconds(),
       ];
 
       if (hours != currentHours) setHours(currentHours);

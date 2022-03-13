@@ -13,8 +13,6 @@
 
   width: 870px;
   height: 70px;
-
-  user-select: none;
 }
 
 .engine-toggle {
@@ -32,6 +30,15 @@
   opacity: 100%;
   outline: none;
   box-shadow: none;
+}
+
+.engine-toggle > img {
+  pointer-events: none;
+  display: none;
+}
+
+.engine-toggle > img.show {
+  display: block;
 }
 
 .input-form {
@@ -62,20 +69,24 @@
 
   opacity: 60%;
   transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.submit.disable {
+  cursor: not-allowed;
 }
 
 .submit > img {
   transition: opacity 0.5s;
+  pointer-events: none;
 }
 
 .submit.disable > img {
-  cursor: not-allowed;
   opacity: 50%;
   filter: saturate(90%) brightness(80%);
 }
 
 .submit:not(.disable) > img:hover {
   opacity: 100%;
-  cursor: pointer;
   filter: saturate(150%) brightness(120%);
 }

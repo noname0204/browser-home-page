@@ -10,6 +10,7 @@
   padding: 0;
   box-sizing: border-box;
   color: #bbc4c8;
+  user-select: none;
 }
 
 #app-root {

@@ -36,12 +36,14 @@ const Search: React.FC = () => {
       method='get'
       onSubmit={handleSubmit}
     >
-      <img
-        className={classes.engineToggle}
-        src={searchEngine === 'Google' ? googleIcon : duckIcon}
-        alt=''
-        onClick={() => searchEngineToggle()}
-      />
+      <div className={classes.engineToggle} onClick={() => searchEngineToggle()}>
+        <img src={googleIcon} className={clsx(searchEngine === 'Google' && classes.show)} alt='' />
+        <img
+          src={duckIcon}
+          className={clsx(searchEngine === 'DuckDuckGo' && classes.show)}
+          alt=''
+        />
+      </div>
       <input
         className={classes.inputForm}
         name='q'
