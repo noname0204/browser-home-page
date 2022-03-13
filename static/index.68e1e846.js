@@ -94,11 +94,15 @@ const Search = () => {
       onClick: () => searchEngineToggle(),
       children: [/* @__PURE__ */ jsx("img", {
         src: googleIcon,
-        className: clsx(searchEngine === "Google" && classes$3.show),
+        className: clsx({
+          [classes$3.show]: searchEngine === "Google"
+        }),
         alt: ""
       }), /* @__PURE__ */ jsx("img", {
         src: duckIcon,
-        className: clsx(searchEngine === "DuckDuckGo" && classes$3.show),
+        className: clsx({
+          [classes$3.show]: searchEngine === "DuckDuckGo"
+        }),
         alt: ""
       })]
     }), /* @__PURE__ */ jsx("input", {
@@ -139,13 +143,9 @@ const DigitalClock = () => {
   react.exports.useEffect(() => {
     interval.current = setInterval(() => {
       date.current = new Date();
-      const [currentHours, currentMinutes, currentSeconds] = [date.current.getHours(), date.current.getMinutes(), date.current.getSeconds()];
-      if (hours != currentHours)
-        setHours(currentHours);
-      if (minutes != currentMinutes)
-        setMinutes(currentMinutes);
-      if (seconds != currentSeconds)
-        setSeconds(currentSeconds);
+      setHours(date.current.getHours());
+      setMinutes(date.current.getMinutes());
+      setSeconds(date.current.getSeconds());
     }, 100);
     return () => {
       clearInterval(interval.current);
@@ -168,10 +168,10 @@ const Header = () => {
     children: [/* @__PURE__ */ jsx(DigitalClock, {}), /* @__PURE__ */ jsx(Search, {})]
   });
 };
-const category = "_category_ggf5c_1";
-const icon = "_icon_ggf5c_19";
-const bookmarks = "_bookmarks_ggf5c_35";
-const link = "_link_ggf5c_83";
+const category = "_category_ef1l9_1";
+const icon = "_icon_ef1l9_19";
+const bookmarks = "_bookmarks_ef1l9_35";
+const link = "_link_ef1l9_85";
 var classes$1 = {
   category,
   icon,
@@ -187,7 +187,6 @@ const Category = ({
   bookmark: bookmark2,
   icon: icon2
 }) => {
-  console.log(bookmark2);
   return /* @__PURE__ */ jsxs("div", {
     className: classes$1.category,
     children: [/* @__PURE__ */ jsx("img", {
@@ -196,11 +195,13 @@ const Category = ({
       alt: ""
     }), /* @__PURE__ */ jsx("div", {
       className: classes$1.bookmarks,
-      children: bookmark2.map((item) => /* @__PURE__ */ jsx("a", {
+      children: bookmark2.length !== 0 ? bookmark2.map((item) => /* @__PURE__ */ jsx("a", {
         href: item.link,
         className: classes$1.link,
         children: truncate(item.name, 16)
-      }))
+      })) : /* @__PURE__ */ jsx("p", {
+        children: "Empty"
+      })
     })]
   });
 };
