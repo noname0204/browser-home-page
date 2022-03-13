@@ -4,8 +4,8 @@ const p = function polyfill() {
   if (relList && relList.supports && relList.supports("modulepreload")) {
     return;
   }
-  for (const link of document.querySelectorAll('link[rel="modulepreload"]')) {
-    processPreload(link);
+  for (const link2 of document.querySelectorAll('link[rel="modulepreload"]')) {
+    processPreload(link2);
   }
   new MutationObserver((mutations) => {
     for (const mutation of mutations) {
@@ -32,28 +32,30 @@ const p = function polyfill() {
       fetchOpts.credentials = "same-origin";
     return fetchOpts;
   }
-  function processPreload(link) {
-    if (link.ep)
+  function processPreload(link2) {
+    if (link2.ep)
       return;
-    link.ep = true;
-    const fetchOpts = getFetchOpts(link);
-    fetch(link.href, fetchOpts);
+    link2.ep = true;
+    const fetchOpts = getFetchOpts(link2);
+    fetch(link2.href, fetchOpts);
   }
 };
 p();
 var styles = "";
-const header = "_header_1dwaf_1";
+const header = "_header_gqnmu_1";
 var classes$4 = {
   header
 };
-const searchBox = "_search-box_60d15_1";
-const engineToggle = "_engine-toggle_60d15_39";
-const inputForm = "_input-form_60d15_73";
-const submit = "_submit_60d15_105";
-const disable = "_disable_60d15_141";
+const searchBox = "_search-box_sb7s9_1";
+const engineToggle = "_engine-toggle_sb7s9_35";
+const show = "_show_sb7s9_79";
+const inputForm = "_input-form_sb7s9_87";
+const submit = "_submit_sb7s9_119";
+const disable = "_disable_sb7s9_149";
 var classes$3 = {
   searchBox,
   engineToggle,
+  show,
   inputForm,
   submit,
   disable
@@ -87,11 +89,18 @@ const Search = () => {
     spellCheck: false,
     method: "get",
     onSubmit: handleSubmit,
-    children: [/* @__PURE__ */ jsx("img", {
+    children: [/* @__PURE__ */ jsxs("div", {
       className: classes$3.engineToggle,
-      src: searchEngine === "Google" ? googleIcon : duckIcon,
-      alt: "",
-      onClick: () => searchEngineToggle()
+      onClick: () => searchEngineToggle(),
+      children: [/* @__PURE__ */ jsx("img", {
+        src: googleIcon,
+        className: clsx(searchEngine === "Google" && classes$3.show),
+        alt: ""
+      }), /* @__PURE__ */ jsx("img", {
+        src: duckIcon,
+        className: clsx(searchEngine === "DuckDuckGo" && classes$3.show),
+        alt: ""
+      })]
     }), /* @__PURE__ */ jsx("input", {
       className: classes$3.inputForm,
       name: "q",
@@ -129,8 +138,8 @@ const DigitalClock = () => {
   const [seconds, setSeconds] = react.exports.useState(date.current.getSeconds());
   react.exports.useEffect(() => {
     interval.current = setInterval(() => {
-      const date2 = new Date();
-      const [currentHours, currentMinutes, currentSeconds] = [date2.getHours(), date2.getMinutes(), date2.getSeconds()];
+      date.current = new Date();
+      const [currentHours, currentMinutes, currentSeconds] = [date.current.getHours(), date.current.getMinutes(), date.current.getSeconds()];
       if (hours != currentHours)
         setHours(currentHours);
       if (minutes != currentMinutes)
@@ -159,21 +168,43 @@ const Header = () => {
     children: [/* @__PURE__ */ jsx(DigitalClock, {}), /* @__PURE__ */ jsx(Search, {})]
   });
 };
-const category = "_category_1w7km_1";
+const category = "_category_ggf5c_1";
+const icon = "_icon_ggf5c_19";
+const bookmarks = "_bookmarks_ggf5c_35";
+const link = "_link_ggf5c_83";
 var classes$1 = {
-  category
+  category,
+  icon,
+  bookmarks,
+  link
+};
+const truncate = (str, maxLenght) => {
+  if (str.length <= maxLenght)
+    return str;
+  return str.slice(0, maxLenght - 1) + "\u2026";
 };
 const Category = ({
   bookmark: bookmark2,
-  icon
+  icon: icon2
 }) => {
   console.log(bookmark2);
-  return /* @__PURE__ */ jsx("div", {
+  return /* @__PURE__ */ jsxs("div", {
     className: classes$1.category,
-    children: icon
+    children: [/* @__PURE__ */ jsx("img", {
+      src: icon2,
+      className: classes$1.icon,
+      alt: ""
+    }), /* @__PURE__ */ jsx("div", {
+      className: classes$1.bookmarks,
+      children: bookmark2.map((item) => /* @__PURE__ */ jsx("a", {
+        href: item.link,
+        className: classes$1.link,
+        children: truncate(item.name, 16)
+      }))
+    })]
   });
 };
-const bookmark = "_bookmark_150s9_1";
+const bookmark = "_bookmark_942qu_1";
 var classes = {
   bookmark
 };
@@ -209,7 +240,7 @@ const course = [
     link: "https://meet.google.com/yqr-mrwm-aqb"
   },
   {
-    name: "H\u1ECDc th\xEAm anh",
+    name: "H\u1ECDc th\xEAm Anh",
     link: "https://meet.google.com/qqb-mvbz-yot"
   },
   {
@@ -255,21 +286,25 @@ var data = {
   socialMedia,
   utils
 };
+var codeIcon = "./static/code.6c1e3085.svg";
+var courseIcon = "./static/course.28429a1b.svg";
+var socialMediaIcon = "./static/social-media.084ba5f2.svg";
+var utilsIcon = "./static/utils.37f142b3.svg";
 const Bookmarks = () => {
   return /* @__PURE__ */ jsxs("div", {
     className: classes.bookmark,
     children: [/* @__PURE__ */ jsx(Category, {
       bookmark: data.code,
-      icon: "Code"
+      icon: codeIcon
     }), /* @__PURE__ */ jsx(Category, {
       bookmark: data.course,
-      icon: "Course"
+      icon: courseIcon
     }), /* @__PURE__ */ jsx(Category, {
       bookmark: data.socialMedia,
-      icon: "Social Media"
+      icon: socialMediaIcon
     }), /* @__PURE__ */ jsx(Category, {
       bookmark: data.utils,
-      icon: "Utils"
+      icon: utilsIcon
     })]
   });
 };
