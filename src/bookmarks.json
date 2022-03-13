@@ -1,0 +1,74 @@
+{
+  "code": [
+    {
+      "name": "Github",
+      "link": "https://github.com/"
+    },
+    {
+      "name": "Netlify",
+      "link": "https://app.netlify.com/"
+    },
+    {
+      "name": "Stack Overflow",
+      "link": "https://stackoverflow.com/"
+    },
+    {
+      "name": "GitHub - 3r3bu5x9/Prismatic-Night",
+      "link": "https://github.com/3r3bu5x9/Prismatic-Night"
+    },
+    {
+      "name": "Mantine",
+      "link": "https://mantine.dev/getting-started/"
+    }
+  ],
+  "course": [
+    {
+      "name": "Lớp 9A4",
+      "link": "https://meet.google.com/yyk-ifxa-ynj?lfhs=2"
+    },
+    {
+      "name": "Học thêm Văn",
+      "link": "https://meet.google.com/yqr-mrwm-aqb"
+    },
+    {
+      "name": "Học thêm anh",
+      "link": "https://meet.google.com/qqb-mvbz-yot"
+    },
+    {
+      "name": "Bồi Dưỡng Tin",
+      "link": "https://meet.google.com/igu-rdic-dtg?pli=1"
+    },
+    {
+      "name": "Figma",
+      "link": "https://www.youtube.com/watch?v=D56hs0Twfco"
+    }
+  ],
+  "socialMedia": [
+    {
+      "name": "Youtube",
+      "link": "https://www.youtube.com/"
+    },
+    {
+      "name": "Facebook",
+      "link": "https://www.facebook.com/"
+    },
+    {
+      "name": "Messenger",
+      "link": "https://www.messenger.com/"
+    },
+    {
+      "name": "Gmail",
+      "link": "https://mail.google.com/mail/u/0/#inbox"
+    },
+    {
+      "name": "Otaku list",
+      "link": "https://otaku-list.netlify.app/"
+    }
+  ],
+  "utils": [
+    {
+      "name": "Drive",
+      "link": "https://drive.google.com/drive/my-drive"
+    }
+  ]
+}

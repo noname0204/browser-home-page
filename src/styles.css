@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'SquareFont';
+  src: url('./fonts/Squares-Bold.otf');
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #bbc4c8;
+}
+
+#app-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: #263238;
+}
