@@ -16,22 +16,16 @@ const ClockItem: React.FC<ClockItemProps> = memo(({ time }) => {
 const DigitalClock: React.FC = () => {
   const interval = useRef<number>();
   const date = useRef<Date>(new Date());
-  const [hours, setHours] = useState(date.current.getHours());
-  const [minutes, setMinutes] = useState(date.current.getMinutes());
-  const [seconds, setSeconds] = useState(date.current.getSeconds());
+  const [hours, setHours] = useState<number>(date.current.getHours());
+  const [minutes, setMinutes] = useState<number>(date.current.getMinutes());
+  const [seconds, setSeconds] = useState<number>(date.current.getSeconds());
 
   useEffect(() => {
     interval.current = setInterval(() => {
       date.current = new Date();
-      const [currentHours, currentMinutes, currentSeconds] = [
-        date.current.getHours(),
-        date.current.getMinutes(),
-        date.current.getSeconds(),
-      ];
-
-      if (hours != currentHours) setHours(currentHours);
-      if (minutes != currentMinutes) setMinutes(currentMinutes);
-      if (seconds != currentSeconds) setSeconds(currentSeconds);
+      setHours(date.current.getHours());
+      setMinutes(date.current.getMinutes());
+      setSeconds(date.current.getSeconds());
     }, 100);
 
     return () => {

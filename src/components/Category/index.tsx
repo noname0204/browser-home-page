@@ -21,17 +21,19 @@ const truncate = (str: string, maxLenght: number): string => {
 };
 
 const Category: React.FC<CategoryProps> = ({ bookmark, icon }) => {
-  console.log(bookmark);
-
   return (
     <div className={classes.category}>
       <img src={icon} className={classes.icon} alt='' />
       <div className={classes.bookmarks}>
-        {bookmark.map((item) => (
-          <a href={item.link} className={classes.link}>
-            {truncate(item.name, 16)}
-          </a>
-        ))}
+        {bookmark.length !== 0 ? (
+          bookmark.map((item) => (
+            <a href={item.link} className={classes.link}>
+              {truncate(item.name, 16)}
+            </a>
+          ))
+        ) : (
+          <p>Empty</p>
+        )}
       </div>
     </div>
   );

@@ -37,10 +37,14 @@ const Search: React.FC = () => {
       onSubmit={handleSubmit}
     >
       <div className={classes.engineToggle} onClick={() => searchEngineToggle()}>
-        <img src={googleIcon} className={clsx(searchEngine === 'Google' && classes.show)} alt='' />
+        <img
+          src={googleIcon}
+          className={clsx({ [classes.show]: searchEngine === 'Google' })}
+          alt=''
+        />
         <img
           src={duckIcon}
-          className={clsx(searchEngine === 'DuckDuckGo' && classes.show)}
+          className={clsx({ [classes.show]: searchEngine === 'DuckDuckGo' })}
           alt=''
         />
       </div>
