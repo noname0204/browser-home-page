@@ -61,8 +61,8 @@
       "link": "https://mail.google.com/mail/u/0/#inbox"
     },
     {
-      "name": "Otaku List",
-      "link": "https://otaku-list.netlify.app/"
+      "name": "Zalo",
+      "link": "https://chat.zalo.me"
     }
   ],
   "utils": [
@@ -73,6 +73,10 @@
     {
       "name": "Figma",
       "link": "https://www.figma.com/"
+    },
+    {
+      "name": "Otaku List",
+      "link": "https://otaku-list.netlify.app/"
     }
   ]
 }
