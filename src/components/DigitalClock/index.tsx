@@ -21,16 +21,14 @@ const DigitalClock: React.FC = () => {
   const [seconds, setSeconds] = useState<number>(date.current.getSeconds());
 
   useEffect(() => {
-    interval.current = setInterval(() => {
+    interval.current = window.setInterval(() => {
       date.current = new Date();
       setHours(date.current.getHours());
       setMinutes(date.current.getMinutes());
       setSeconds(date.current.getSeconds());
     }, 100);
 
-    return () => {
-      clearInterval(interval.current);
-    };
+    return () => clearInterval(interval.current);
   }, []);
 
   return (

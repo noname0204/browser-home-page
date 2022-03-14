@@ -13,8 +13,8 @@
       "link": "https://stackoverflow.com/"
     },
     {
-      "name": "GitHub - 3r3bu5x9/Prismatic-Night",
-      "link": "https://github.com/3r3bu5x9/Prismatic-Night"
+      "name": "Firebase",
+      "link": "https://console.firebase.google.com/u/0/"
     },
     {
       "name": "Mantine",
@@ -39,7 +39,7 @@
       "link": "https://meet.google.com/igu-rdic-dtg?pli=1"
     },
     {
-      "name": "Figma",
+      "name": "Figma Course",
       "link": "https://www.youtube.com/watch?v=D56hs0Twfco"
     }
   ],
@@ -61,7 +61,7 @@
       "link": "https://mail.google.com/mail/u/0/#inbox"
     },
     {
-      "name": "Otaku list",
+      "name": "Otaku List",
       "link": "https://otaku-list.netlify.app/"
     }
   ],
@@ -69,6 +69,10 @@
     {
       "name": "Drive",
       "link": "https://drive.google.com/drive/my-drive"
+    },
+    {
+      "name": "Figma",
+      "link": "https://www.figma.com/"
     }
   ]
 }
