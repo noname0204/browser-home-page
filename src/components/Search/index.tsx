@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import { useInputState, useToggle } from '@mantine/hooks';
 import classes from './Search.module.css';
@@ -14,6 +14,7 @@ const Search: React.FC = () => {
   const [searchEngine, searchEngineToggle] = useToggle<SearchEngine>('Google', searchEngines);
   const [disableSubmit, setDisableSubmit] = useState<boolean>(false);
   const [inputValue, setInputValue] = useInputState<string>('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleInputClick = (e: React.MouseEvent) => {
     (e.target as HTMLInputElement).select();
@@ -22,6 +23,10 @@ const Search: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     if (disableSubmit) e.preventDefault();
   };
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   useEffect(() => {
     if (inputValue !== '' && disableSubmit) setDisableSubmit(false);
@@ -49,6 +54,7 @@ const Search: React.FC = () => {
         />
       </div>
       <input
+        ref={inputRef}
         className={classes.inputForm}
         name='q'
         type='text'
